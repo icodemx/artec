@@ -18,19 +18,15 @@ description = "Default layout"
     <body>
 
         <!-- Header -->
-        <header id="layout-header">
-            {% partial 'site/header' %}
-        </header>
+        {% partial 'site/header' %}
 
         <!-- Content -->
-        <main id="layout-content">
+        <main>
             {% page %}
         </main>
 
         <!-- Footer -->
-        <footer id="layout-footer">
-            {% partial 'site/footer' %}
-        </footer>
+        {% partial 'site/footer' %}
 
         <!-- Scripts -->
         <script src="{{ 'assets/js/src/vendor/jquery.js'|theme }}"></script>

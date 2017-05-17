@@ -1,0 +1,147 @@
+main {
+  background-color: @Site-color-60;
+}
+
+.Section {
+  padding: 0;
+}
+
+
+#Level-1 {
+  position: relative;
+  > .Section-content{
+    padding: @Base-number*40 @Base-number*2 @Base-number*10;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: @Site-color-0;
+    > .Section-title {
+      font-family: @Font-family_2;
+      font-size: 100px;
+      text-transform: uppercase;
+      line-height: 120px;
+    }
+    > .Section-subtitle {
+      font-family: @Font-family_2;
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: @Base-number*3;
+    }
+    > .Section-text {
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+  }
+  > .Section-bg {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#Level-2 {
+  background-color: black;
+  .container {
+    padding: @Base-number*18 0 @Base-number*20;
+    color: @Site-color-0;
+    text-align: center;
+    font-family: @Font-family_2;
+    > .Section-title {
+      font-size: 34px;
+      margin-bottom: @Base-number*2;
+    }
+    > .Section-text {
+      font-size: 20px;
+    }
+  }
+}
+
+#Level-3 {
+  display: inline-table;
+  width: 100%;
+  font-family: @Font-family_2;
+  color: #D6CDA5;
+  text-transform: uppercase;
+  position: relative;
+  .Section-title {
+    font-size: @Base-number*9.5;
+    line-height: @Base-number*10;
+  }
+  .Section-subtitle {
+    font-size: 20px;
+  }
+  > .Section-sub {
+    position: relative;
+    > .Section-content {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      padding: @Base-number*8;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+    > .Section-bg {
+      img {
+        width: 100%;
+      }
+    }
+    &.Divided {
+      height: 100%;
+      position: absolute;
+      right: 0;
+      width: 50%;
+      top: 0;
+      .Section-sub--sub {
+        padding: @Base-number*8;
+        &:first-of-type {
+          background-color: #E56448;
+          height: 55%;
+        }
+        &:last-of-type {
+          background-color: #323642;
+          height: 45%;
+        }
+      }
+    }
+  }
+}
+
+#Level-4 {
+  background-color: @Site-color-0;
+  padding: @Base-number*10 @Base-number*8;
+  text-transform: uppercase;
+  font-family: @Font-family_2;
+  position: relative;
+  > .Section-title {
+    font-size: @Base-number*20;
+    line-height: @Base-number*23;
+  }
+  > .Section-subtitle {
+    font-size: 20px;
+  }
+  > .Section-action {
+    font-size: @Base-number*36;
+    position: absolute;
+    right: @Base-number*8;
+    top: 0;
+    a {
+      color: #E56448;
+    }
+  }
+}
+
+#Level-5 {
+  background-color: black;
+  padding: @Base-number*10 @Base-number*8;
+  color: #D6CDA5;
+  font-family: @Font-family_2;
+  .Section-title {
+    font-size: @Base-number*9.5;
+    line-height: @Base-number*10;
+    text-transform: uppercase;
+  }
+  .Section-subtitle {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
