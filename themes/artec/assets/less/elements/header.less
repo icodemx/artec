@@ -1,0 +1,32 @@
+#Header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+  > .container {
+    > .Header-logo {
+      float: left;
+      img {
+        width: 200px;
+      }
+    }
+    > .Header-actions {
+      float: right;
+      > .Items {
+        display: inline-table;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        > .Header-element {
+          padding: @Base-number*3 @Base-number*2;
+          float: left;
+          a {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: @Site-color-0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -21,7 +21,7 @@
 /**
  * @includes
  *
- * Includes de archivos de mixins y variables de la librería Bootstrap
+ * Importación de archivos de mixins y variables de la librería Bootstrap
  *
  */
 /**
@@ -96,7 +96,7 @@
 /**
  * @includes
  *
- * Includes de archivos core de Bootstrap y FontAwesome
+ * Importación de archivos core de Bootstrap y FontAwesome
  *
  */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -8160,6 +8160,184 @@ button.close {
 }
 .owl-controls .owl-dots .owl-dot.active span {
   background-color: #666666;
+}
+/**
+ * @includes
+ *
+ * Importación de archivos de estilización singular de págias
+ *
+ */
+main {
+  background-color: #666666;
+}
+.Section {
+  padding: 0;
+}
+#Level-1 {
+  position: relative;
+}
+#Level-1 > .Section-content {
+  padding: 280px 14px 70px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+#Level-1 > .Section-content > .Section-title {
+  font-family: "Times New Roman";
+  font-size: 100px;
+  text-transform: uppercase;
+  line-height: 120px;
+}
+#Level-1 > .Section-content > .Section-subtitle {
+  font-family: "Times New Roman";
+  font-size: 22px;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+}
+#Level-1 > .Section-content > .Section-text {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+#Level-1 > .Section-bg img {
+  width: 100%;
+}
+#Level-2 {
+  background-color: black;
+}
+#Level-2 .container {
+  padding: 126px 0 140px;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Times New Roman";
+}
+#Level-2 .container > .Section-title {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+#Level-2 .container > .Section-text {
+  font-size: 20px;
+}
+#Level-3 {
+  display: inline-table;
+  width: 100%;
+  font-family: "Times New Roman";
+  color: #D6CDA5;
+  text-transform: uppercase;
+  position: relative;
+}
+#Level-3 .Section-title {
+  font-size: 66.5px;
+  line-height: 70px;
+}
+#Level-3 .Section-subtitle {
+  font-size: 20px;
+}
+#Level-3 > .Section-sub {
+  position: relative;
+}
+#Level-3 > .Section-sub > .Section-content {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 56px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#Level-3 > .Section-sub > .Section-bg img {
+  width: 100%;
+}
+#Level-3 > .Section-sub.Divided {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  top: 0;
+}
+#Level-3 > .Section-sub.Divided .Section-sub--sub {
+  padding: 56px;
+}
+#Level-3 > .Section-sub.Divided .Section-sub--sub:first-of-type {
+  background-color: #E56448;
+  height: 55%;
+}
+#Level-3 > .Section-sub.Divided .Section-sub--sub:last-of-type {
+  background-color: #323642;
+  height: 45%;
+}
+#Level-4 {
+  background-color: #ffffff;
+  padding: 70px 56px;
+  text-transform: uppercase;
+  font-family: "Times New Roman";
+  position: relative;
+}
+#Level-4 > .Section-title {
+  font-size: 140px;
+  line-height: 161px;
+}
+#Level-4 > .Section-subtitle {
+  font-size: 20px;
+}
+#Level-4 > .Section-action {
+  font-size: 252px;
+  position: absolute;
+  right: 56px;
+  top: 0;
+}
+#Level-4 > .Section-action a {
+  color: #E56448;
+}
+#Level-5 {
+  background-color: black;
+  padding: 70px 56px;
+  color: #D6CDA5;
+  font-family: "Times New Roman";
+}
+#Level-5 .Section-title {
+  font-size: 66.5px;
+  line-height: 70px;
+  text-transform: uppercase;
+}
+#Level-5 .Section-subtitle {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+/**
+ * @includes
+ *
+ * Importación de archivos de estilización de elementos
+ *
+ */
+#Header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 9;
+}
+#Header > .container > .Header-logo {
+  float: left;
+}
+#Header > .container > .Header-logo img {
+  width: 200px;
+}
+#Header > .container > .Header-actions {
+  float: right;
+}
+#Header > .container > .Header-actions > .Items {
+  display: inline-table;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#Header > .container > .Header-actions > .Items > .Header-element {
+  padding: 21px 14px;
+  float: left;
+}
+#Header > .container > .Header-actions > .Items > .Header-element a {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=theme.css.map */
