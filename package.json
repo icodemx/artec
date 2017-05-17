@@ -1,0 +1,36 @@
+{
+  "name": "artec",
+  "version": "1.0.0",
+  "description": "Web gallery",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icodemx/artec.git"
+  },
+  "keywords": [
+    "gallery",
+    "artec"
+  ],
+  "author": "icodemx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icodemx/artec/issues"
+  },
+  "homepage": "https://github.com/icodemx/artec#readme",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "laravel-elixir": "^5.0.0",
+    "bootstrap-sass": "^3.0.0",
+    "gulp-concat-util": "^0.5.5",
+    "gulp-uglify": "^2.1.2"
+  }
+}
