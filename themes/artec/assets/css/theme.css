@@ -8164,6 +8164,16 @@ button.close {
 /**
  * @includes
  *
+ * Importación de archivos de estilización de plantilla
+ *
+ */
+body {
+  padding: 0;
+  font-family: 'Libre Baskerville', serif;
+}
+/**
+ * @includes
+ *
  * Importación de archivos de estilización singular de págias
  *
  */
@@ -8177,21 +8187,19 @@ main {
   position: relative;
 }
 #Level-1 > .Section-content {
-  padding: 280px 14px 70px;
+  padding: 315px 14px 70px;
   position: absolute;
   width: 100%;
   text-align: center;
   color: #ffffff;
 }
 #Level-1 > .Section-content > .Section-title {
-  font-family: "Times New Roman";
-  font-size: 100px;
+  font-size: 85px;
   text-transform: uppercase;
-  line-height: 120px;
+  line-height: 100px;
 }
 #Level-1 > .Section-content > .Section-subtitle {
-  font-family: "Times New Roman";
-  font-size: 22px;
+  font-size: 20px;
   text-transform: uppercase;
   margin-bottom: 21px;
 }
@@ -8206,32 +8214,30 @@ main {
   background-color: black;
 }
 #Level-2 .container {
-  padding: 126px 0 140px;
+  padding: 140px 0 140px;
   color: #ffffff;
   text-align: center;
-  font-family: "Times New Roman";
 }
 #Level-2 .container > .Section-title {
-  font-size: 34px;
+  font-size: 28px;
   margin-bottom: 14px;
 }
 #Level-2 .container > .Section-text {
-  font-size: 20px;
+  font-size: 16px;
 }
 #Level-3 {
   display: inline-table;
   width: 100%;
-  font-family: "Times New Roman";
   color: #D6CDA5;
   text-transform: uppercase;
   position: relative;
 }
 #Level-3 .Section-title {
-  font-size: 66.5px;
+  font-size: 63px;
   line-height: 70px;
 }
 #Level-3 .Section-subtitle {
-  font-size: 20px;
+  font-size: 18px;
 }
 #Level-3 > .Section-sub {
   position: relative;
@@ -8269,11 +8275,10 @@ main {
   background-color: #ffffff;
   padding: 70px 56px;
   text-transform: uppercase;
-  font-family: "Times New Roman";
   position: relative;
 }
 #Level-4 > .Section-title {
-  font-size: 140px;
+  font-size: 133px;
   line-height: 161px;
 }
 #Level-4 > .Section-subtitle {
@@ -8292,7 +8297,6 @@ main {
   background-color: black;
   padding: 70px 56px;
   color: #D6CDA5;
-  font-family: "Times New Roman";
 }
 #Level-5 .Section-title {
   font-size: 66.5px;
@@ -8302,6 +8306,83 @@ main {
 #Level-5 .Section-subtitle {
   font-size: 20px;
   text-transform: uppercase;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  #Level-1 > .Section-content > .Section-title {
+    font-size: 75px;
+  }
+  #Level-1 > .Section-content > .Section-subtitle {
+    font-size: 18px;
+  }
+  #Level-3 .Section-title {
+    font-size: 56px;
+  }
+  #Level-3 .Section-subtitle {
+    font-size: 16px;
+  }
+  #Level-4 > .Section-title {
+    font-size: 105px;
+    line-height: 140px;
+  }
+  #Level-4 > .Section-action {
+    font-size: 210px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #Level-1 > .Section-content {
+    padding-top: 245px !important;
+  }
+  #Level-1 > .Section-content > .Section-title {
+    font-size: 55px;
+    line-height: 65px;
+  }
+  #Level-1 > .Section-content > .Section-subtitle {
+    font-size: 16px;
+  }
+  #Level-3 .Section-title {
+    font-size: 49px;
+  }
+  #Level-3 .Section-subtitle {
+    font-size: 14px;
+  }
+  #Level-3 > .Section-sub > .Section-content {
+    padding: 35px;
+  }
+  #Level-3 > .Section-sub.Divided .Section-sub--sub {
+    padding: 28px 35px;
+  }
+  #Level-4 > .Section-title {
+    font-size: 91px;
+    line-height: 112px;
+  }
+  #Level-4 > .Section-action {
+    font-size: 175px;
+    top: 28px;
+    right: 28px;
+  }
+}
+@media (max-width: 767px) {
+  #Level-1 {
+    position: relative;
+  }
+  #Level-1 > .Section-content {
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    margin-top: -70px;
+    text-align: center;
+  }
+  #Level-1 > .Section-content > .Section-title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  #Level-1 > .Section-content > .Section-subtitle {
+    font-size: 16px;
+  }
+  #Level-2 .container {
+    padding: 126px 21px 140px;
+  }
 }
 /**
  * @includes
@@ -8317,9 +8398,32 @@ main {
 }
 #Header > .container > .Header-logo {
   float: left;
+  padding: 7px 0 0;
 }
 #Header > .container > .Header-logo img {
   width: 200px;
+}
+#Header > .container > .Header-logo span {
+  font-size: 42px;
+  color: #ffffff;
+}
+#Header > .container > .Header-show {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #Header > .container > .Header-show {
+    display: block !important;
+  }
+  table#Header > .container > .Header-show {
+    display: table;
+  }
+  tr#Header > .container > .Header-show {
+    display: table-row !important;
+  }
+  th#Header > .container > .Header-show,
+  td#Header > .container > .Header-show {
+    display: table-cell !important;
+  }
 }
 #Header > .container > .Header-actions {
   float: right;
@@ -8331,13 +8435,65 @@ main {
   padding: 0;
 }
 #Header > .container > .Header-actions > .Items > .Header-element {
-  padding: 21px 14px;
   float: left;
 }
 #Header > .container > .Header-actions > .Items > .Header-element a {
-  font-size: 16px;
+  display: block;
+  padding: 28px 14px;
+  font-size: 14px;
   text-transform: uppercase;
   color: #ffffff;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #Header > .container {
+    width: 100%;
+  }
+  #Header > .container > .Header-actions > .Items > .Header-element a {
+    display: block;
+    padding: 28px 10.5px;
+  }
+}
+@media (max-width: 767px) {
+  #Header > .container > .Header-show {
+    float: right;
+    padding: 17.5px 0 0;
+  }
+  #Header > .container > .Header-show button {
+    font-size: 20px;
+    padding: 4px 12px;
+    background-color: transparent;
+    border: solid 2px #ffffff;
+    border-radius: 0;
+  }
+  #Header > .container > .Header-actions {
+    display: none;
+    float: left;
+    width: 100%;
+  }
+  #Header > .container > .Header-actions > .Items {
+    margin: 0;
+    background-color: #1d1d1b;
+    display: block;
+  }
+  #Header > .container > .Header-actions > .Items > .Header-element {
+    float: none;
+  }
+  #Header > .container > .Header-actions > .Items > .Header-element a {
+    display: block;
+    color: #ffffff;
+    padding: 17.5px 14px;
+    border-bottom: solid 1px #333333;
+  }
+  #Header > .container > .Header-actions > .Items > .Header-element a:hover {
+    text-decoration: none;
+    background-color: #333333;
+  }
+  #Header > .container > .Header-actions > .Items > .Header-element:last-of-type a {
+    border-bottom: none;
+  }
+  #Header.Active > .container > .Header-actions {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */
