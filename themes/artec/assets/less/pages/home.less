@@ -223,20 +223,77 @@ main {
      position: absolute;
      width: 100%;
      top:50%;
-     margin-top: -@Base-number*10;
+     margin-top: -@Base-number*7;
      text-align: center;
      > .Section-title {
-       font-size: 50px;
-       line-height: 60px;
+       font-size: 38px;
+       line-height: 45px;
      }
      > .Section-subtitle {
-       font-size: 16px;
+       font-size: 14px;
+       margin-bottom: @Base-number*2;
      }
    }
  }
   #Level-2 {
     .container {
       padding: @Base-number*18 @Base-number*3 @Base-number*20;
+    }
+  }
+  #Level-3 {
+    > .Section-sub {
+      width: 100% !important;
+      position: relative !important;
+      height: @Base-number*30;
+      > .Section-content {
+        position: relative;
+        background-color: transparent;
+        z-index: 3;
+        padding: @Base-number*2 0 0 @Base-number*2;
+      }
+      > .Section-bg {
+        position: absolute;
+        top: 0;
+        left: -25%;
+        width: 200%;
+        img {
+          -webkit-filter: brightness(45%);
+        }
+      }
+    }
+    .Section-title {
+      font-size: 38px;
+      line-height: 45px;
+    }
+    .Section-subtitle {
+      font-size: 14px;
+    }
+    .Section-sub--sub {
+      padding: @Base-number*2 0 0 @Base-number*2 !important;
+      height: @Base-number*30 !important;
+    }
+  }
+  #Level-4 {
+    padding: @Base-number*4;
+    > .Section-title {
+      font-size: @Base-number*6.5;
+      letter-spacing: -4px;
+      line-height: @Base-number*9;
+    }
+    > .Section-action {
+      font-size: @Base-number*9;
+      right: 0;
+      top: @Base-number*5;
+    }
+  }
+  #Level-5 {
+    padding: @Base-number*4;
+    .Section-title {
+      font-size: 38px;
+      line-height: 45px;
+    }
+    .Section-subtitle {
+      font-size: 14px;
     }
   }
 }
