@@ -10,20 +10,18 @@ main {
 #Level-1 {
   position: relative;
   > .Section-content{
-    padding: @Base-number*40 @Base-number*2 @Base-number*10;
+    padding: @Base-number*45 @Base-number*2 @Base-number*10;
     position: absolute;
     width: 100%;
     text-align: center;
     color: @Site-color-0;
     > .Section-title {
-      font-family: @Font-family_2;
-      font-size: 100px;
+      font-size: 85px;
       text-transform: uppercase;
-      line-height: 120px;
+      line-height: 100px;
     }
     > .Section-subtitle {
-      font-family: @Font-family_2;
-      font-size: 22px;
+      font-size: 20px;
       text-transform: uppercase;
       margin-bottom: @Base-number*3;
     }
@@ -42,16 +40,15 @@ main {
 #Level-2 {
   background-color: black;
   .container {
-    padding: @Base-number*18 0 @Base-number*20;
+    padding: @Base-number*20 0 @Base-number*20;
     color: @Site-color-0;
     text-align: center;
-    font-family: @Font-family_2;
     > .Section-title {
-      font-size: 34px;
+      font-size: 28px;
       margin-bottom: @Base-number*2;
     }
     > .Section-text {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }
@@ -59,16 +56,15 @@ main {
 #Level-3 {
   display: inline-table;
   width: 100%;
-  font-family: @Font-family_2;
   color: #D6CDA5;
   text-transform: uppercase;
   position: relative;
   .Section-title {
-    font-size: @Base-number*9.5;
+    font-size: @Base-number*9;
     line-height: @Base-number*10;
   }
   .Section-subtitle {
-    font-size: 20px;
+    font-size: 18px;
   }
   > .Section-sub {
     position: relative;
@@ -110,10 +106,9 @@ main {
   background-color: @Site-color-0;
   padding: @Base-number*10 @Base-number*8;
   text-transform: uppercase;
-  font-family: @Font-family_2;
   position: relative;
   > .Section-title {
-    font-size: @Base-number*20;
+    font-size: @Base-number*19;
     line-height: @Base-number*23;
   }
   > .Section-subtitle {
@@ -134,7 +129,6 @@ main {
   background-color: black;
   padding: @Base-number*10 @Base-number*8;
   color: #D6CDA5;
-  font-family: @Font-family_2;
   .Section-title {
     font-size: @Base-number*9.5;
     line-height: @Base-number*10;
@@ -143,5 +137,106 @@ main {
   .Section-subtitle {
     font-size: 20px;
     text-transform: uppercase;
+  }
+}
+
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  #Level-1 {
+    > .Section-content {
+      > .Section-title {
+        font-size: 75px;
+      }
+      > .Section-subtitle {
+        font-size: 18px;
+      }
+    }
+  }
+  #Level-3 {
+    .Section-title {
+      font-size: @Base-number*8;
+    }
+    .Section-subtitle {
+      font-size: 16px;
+    }
+  }
+  #Level-4 {
+    > .Section-title {
+      font-size: @Base-number*15;
+      line-height: @Base-number*20;
+    }
+    > .Section-action {
+      font-size: @Base-number*30;
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  #Level-1 {
+    > .Section-content {
+      padding-top: @Base-number*35 !important;
+      > .Section-title {
+        font-size: 55px;
+        line-height: 65px;
+      }
+      > .Section-subtitle {
+        font-size: 16px;
+      }
+    }
+  }
+  #Level-3 {
+    .Section-title {
+      font-size: @Base-number*7;
+    }
+    .Section-subtitle {
+      font-size: 14px;
+    }
+    > .Section-sub {
+      > .Section-content {
+        padding: @Base-number*5;
+      }
+      &.Divided {
+        .Section-sub--sub {
+          padding: @Base-number*4 @Base-number*5;
+        }
+      }
+    }
+  }
+  #Level-4 {
+    > .Section-title {
+      font-size: @Base-number*13;
+      line-height: @Base-number*16;
+    }
+    > .Section-action {
+      font-size: @Base-number*25;
+      top: @Base-number*4;
+      right: @Base-number*4;
+    }
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+ #Level-1 {
+   position: relative;
+   > .Section-content {
+     padding: 0;
+     position: absolute;
+     width: 100%;
+     top:50%;
+     margin-top: -@Base-number*10;
+     text-align: center;
+     > .Section-title {
+       font-size: 50px;
+       line-height: 60px;
+     }
+     > .Section-subtitle {
+       font-size: 16px;
+     }
+   }
+ }
+  #Level-2 {
+    .container {
+      padding: @Base-number*18 @Base-number*3 @Base-number*20;
+    }
   }
 }
