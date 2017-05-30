@@ -8388,6 +8388,7 @@ main {
     width: 100% !important;
     position: relative !important;
     height: 210px;
+    overflow: hidden;
   }
   #Level-3 > .Section-sub > .Section-content {
     position: relative;
@@ -8399,7 +8400,7 @@ main {
     position: absolute;
     top: 0;
     left: -25%;
-    width: 200%;
+    width: 150%;
   }
   #Level-3 > .Section-sub > .Section-bg img {
     -webkit-filter: brightness(45%);
@@ -8416,7 +8417,7 @@ main {
     height: 210px !important;
   }
   #Level-4 {
-    padding: 28px;
+    padding: 28px 14px;
   }
   #Level-4 > .Section-title {
     font-size: 45.5px;
@@ -8446,8 +8447,6 @@ main {
  *
  */
 #Header {
-  position: absolute;
-  top: 0;
   width: 100%;
   z-index: 9;
 }
@@ -8460,7 +8459,7 @@ main {
 }
 #Header > .container > .Header-logo span {
   font-size: 42px;
-  color: #ffffff;
+  color: #333333;
 }
 #Header > .container > .Header-show {
   display: none !important;
@@ -8497,6 +8496,67 @@ main {
   padding: 28px 14px;
   font-size: 14px;
   text-transform: uppercase;
+  color: #333333;
+}
+#Header-home {
+  width: 100%;
+  z-index: 9;
+  position: absolute;
+  top: 0;
+}
+#Header-home > .container > .Header-logo {
+  float: left;
+  padding: 7px 0 0;
+}
+#Header-home > .container > .Header-logo img {
+  width: 200px;
+}
+#Header-home > .container > .Header-logo span {
+  font-size: 42px;
+  color: #333333;
+}
+#Header-home > .container > .Header-show {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  #Header-home > .container > .Header-show {
+    display: block !important;
+  }
+  table#Header-home > .container > .Header-show {
+    display: table;
+  }
+  tr#Header-home > .container > .Header-show {
+    display: table-row !important;
+  }
+  th#Header-home > .container > .Header-show,
+  td#Header-home > .container > .Header-show {
+    display: table-cell !important;
+  }
+}
+#Header-home > .container > .Header-actions {
+  float: right;
+}
+#Header-home > .container > .Header-actions > .Items {
+  display: inline-table;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#Header-home > .container > .Header-actions > .Items > .Header-element {
+  float: left;
+}
+#Header-home > .container > .Header-actions > .Items > .Header-element a {
+  display: block;
+  padding: 28px 14px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333333;
+}
+#Header-home > .container > .Header-logo span {
+  font-size: 42px;
+  color: #ffffff;
+}
+#Header-home > .container > .Header-actions > .Items > .Header-element a {
   color: #ffffff;
 }
 @media (min-width: 768px) and (max-width: 991px) {

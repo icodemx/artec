@@ -1,6 +1,4 @@
 #Header {
-  position: absolute;
-  top: 0;
   width: 100%;
   z-index: 9;
   > .container {
@@ -12,7 +10,7 @@
       }
       span {
         font-size: 42px;
-        color: @Site-color-0;
+        color: @Site-color-80;
       }
     }
     > .Header-show {
@@ -32,6 +30,29 @@
             padding: @Base-number*4 @Base-number*2;
             font-size: 14px;
             text-transform: uppercase;
+            color: @Site-color-80;
+          }
+        }
+      }
+    }
+  }
+}
+
+#Header-home {
+  #Header;
+  position: absolute;
+  top: 0;
+  > .container {
+    > .Header-logo {
+      span {
+        font-size: 42px;
+        color: @Site-color-0;
+      }
+    }
+    > .Header-actions {
+      > .Items {
+        > .Header-element {
+          a {
             color: @Site-color-0;
           }
         }

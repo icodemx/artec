@@ -245,6 +245,7 @@ main {
       width: 100% !important;
       position: relative !important;
       height: @Base-number*30;
+      overflow: hidden;
       > .Section-content {
         position: relative;
         background-color: transparent;
@@ -255,7 +256,7 @@ main {
         position: absolute;
         top: 0;
         left: -25%;
-        width: 200%;
+        width: 150%;
         img {
           -webkit-filter: brightness(45%);
         }
@@ -274,7 +275,7 @@ main {
     }
   }
   #Level-4 {
-    padding: @Base-number*4;
+    padding: @Base-number*4 @Base-number*2;
     > .Section-title {
       font-size: @Base-number*6.5;
       letter-spacing: -4px;
