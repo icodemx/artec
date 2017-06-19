@@ -39,7 +39,6 @@
       color: @Site-color-0;
       > .container {
         > .Text-regular {
-          width: 100%;
           padding: 0 @Base-number*2;
           margin-bottom: @Base-number*6;
           font-size: 18px;
@@ -47,6 +46,7 @@
         }
       }
       .Text-regular {
+        width: 100%;
         > p {
           margin-bottom: @Base-number*2;
         }
@@ -95,6 +95,17 @@
 
 }
 
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  #Taller {
+    #Section-2 {
+      .Section-data {
+        .col-md-4 {
+          margin-bottom: @Base-number*6;
+        }
+      }
+    }
+  }
+}
 @media (max-width: @screen-xs-max) {
   #Taller {
     > .container {
@@ -122,6 +133,14 @@
         }
       }
     }
+    #Section-2 {
+      .Section-data {
+        .col-md-4 {
+          margin-bottom: @Base-number*7;
+        }
+      }
+    }
+
     .Title-big {
       font-size: 40px;
       text-transform: uppercase;
