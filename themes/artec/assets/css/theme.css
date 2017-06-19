@@ -8481,6 +8481,88 @@ main {
 .Page-content > .container .Projects .Project-element .Project-information > .Title {
   font-size: 20px;
 }
+#Taller > .container > .Page-title {
+  margin-bottom: 0;
+  line-height: 100%;
+}
+#Taller > .container > .Page-subtitle {
+  margin-bottom: 42px;
+  font-size: 30px;
+  text-transform: none;
+}
+#Taller > .container > .Page-description {
+  font-size: 19px;
+  color: #808080;
+  font-family: "Helvetica", Arial, sans-serif;
+  width: 70%;
+}
+#Taller > .Page-section .Section-data > .container {
+  padding-top: 70px;
+  padding-bottom: 98px;
+}
+#Taller #Section-2 .Section-data {
+  background-color: #000000;
+  color: #ffffff;
+}
+#Taller #Section-2 .Section-data > .container > .Text-regular {
+  padding: 0 14px;
+  margin-bottom: 42px;
+  font-size: 18px;
+}
+#Taller #Section-2 .Section-data .Text-regular > p {
+  margin-bottom: 14px;
+}
+#Taller #Section-2 .Section-data .Title-regular {
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+#Taller #Section-3 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller #Section-4 .Section-data {
+  background-color: #000000;
+  color: #ffffff;
+}
+#Taller #Section-4 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller #Section-5 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller #Section-6 .Section-data {
+  background-color: #000000;
+  color: #ffffff;
+}
+#Taller #Section-6 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller #Section-7 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller #Section-8 .Section-data {
+  background-color: #000000;
+  color: #ffffff;
+}
+#Taller #Section-8 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller #Section-9 .Section-data .container .Text-regular {
+  width: 65%;
+}
+#Taller .Text-regular {
+  font-size: 14px;
+}
+#Taller .Text-regular > p {
+  margin-bottom: 21px;
+}
+#Taller .Title-regular {
+  font-size: 24px;
+}
+#Taller .Title-big {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 21px;
+}
 /**
  * @includes
  *
