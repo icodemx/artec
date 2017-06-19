@@ -15,6 +15,16 @@
     }
     > .Header-show {
       .visible-xs;
+      float: right;
+      padding: @Base-number*1.5 0 0;
+      button {
+        font-size: 20px;
+        padding: 4px 12px;
+        background-color: transparent;
+        border: solid 2px @Site-color;
+        border-radius: 0;
+        color: @Site-color;
+      }
     }
     > .Header-actions {
       float: right;
@@ -46,6 +56,12 @@
     > .Header-logo {
       span {
         font-size: 42px;
+        color: @Site-color-0;
+      }
+    }
+    > .Header-show {
+      button {
+        border: solid 2px @Site-color-0;
         color: @Site-color-0;
       }
     }
@@ -85,18 +101,7 @@
       > .Header-logo {
         padding-top: @Base-number;
         span {
-          font-size: 30px;
-        }
-      }
-      > .Header-show {
-        float: right;
-        padding: @Base-number*1.5 0 0;
-        button {
-          font-size: 20px;
-          padding: 4px 12px;
-          background-color: transparent;
-          border: solid 2px @Site-color-0;
-          border-radius: 0;
+          font-size: 38px;
         }
       }
       > .Header-actions {

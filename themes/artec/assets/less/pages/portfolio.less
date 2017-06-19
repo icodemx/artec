@@ -19,7 +19,6 @@
       font-size: 15px;
     }
 
-
     .Projects {
       .Project-element {
         padding: @Base-number*8 0;
@@ -40,5 +39,43 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  #Portfolio {
+    > .container {
+      > .Page-title {
+        font-size: 42px;
+        line-height: 110%;
+      }
+      > .Page-subtitle {
+        font-size: 22px;
+      }
+      > .Page-description {
+        width: 100%;
+      }
+    }
+
+    .Projects {
+      .Project-element {
+        padding: @Base-number*8 0;
+        .Project-comparision {
+          margin-bottom: @Base-number*3;
+        }
+        .Project-information {
+          font-size: 18px;
+          color: @Site-color-50;
+          > div {
+            width: 100%;
+            margin-left: 0;
+          }
+          > .Title {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
   }
 }

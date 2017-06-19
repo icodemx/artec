@@ -8481,6 +8481,35 @@ main {
 .Page-content > .container .Projects .Project-element .Project-information > .Title {
   font-size: 20px;
 }
+@media (max-width: 767px) {
+  #Portfolio > .container > .Page-title {
+    font-size: 42px;
+    line-height: 110%;
+  }
+  #Portfolio > .container > .Page-subtitle {
+    font-size: 22px;
+  }
+  #Portfolio > .container > .Page-description {
+    width: 100%;
+  }
+  #Portfolio .Projects .Project-element {
+    padding: 56px 0;
+  }
+  #Portfolio .Projects .Project-element .Project-comparision {
+    margin-bottom: 21px;
+  }
+  #Portfolio .Projects .Project-element .Project-information {
+    font-size: 18px;
+    color: #808080;
+  }
+  #Portfolio .Projects .Project-element .Project-information > div {
+    width: 100%;
+    margin-left: 0;
+  }
+  #Portfolio .Projects .Project-element .Project-information > .Title {
+    font-size: 20px;
+  }
+}
 #Taller > .container > .Page-title {
   margin-bottom: 0;
   line-height: 100%;
@@ -8500,11 +8529,18 @@ main {
   padding-top: 70px;
   padding-bottom: 98px;
 }
+#Taller > .Page-section .Section-data > .container .Text-regular {
+  width: 65%;
+}
+#Taller > .Page-section .Section-cover img {
+  width: 100%;
+}
 #Taller #Section-2 .Section-data {
   background-color: #000000;
   color: #ffffff;
 }
 #Taller #Section-2 .Section-data > .container > .Text-regular {
+  width: 100%;
   padding: 0 14px;
   margin-bottom: 42px;
   font-size: 18px;
@@ -8516,38 +8552,17 @@ main {
   margin-bottom: 14px;
   text-transform: uppercase;
 }
-#Taller #Section-3 .Section-data .container .Text-regular {
-  width: 65%;
-}
 #Taller #Section-4 .Section-data {
   background-color: #000000;
   color: #ffffff;
-}
-#Taller #Section-4 .Section-data .container .Text-regular {
-  width: 65%;
-}
-#Taller #Section-5 .Section-data .container .Text-regular {
-  width: 65%;
 }
 #Taller #Section-6 .Section-data {
   background-color: #000000;
   color: #ffffff;
 }
-#Taller #Section-6 .Section-data .container .Text-regular {
-  width: 65%;
-}
-#Taller #Section-7 .Section-data .container .Text-regular {
-  width: 65%;
-}
 #Taller #Section-8 .Section-data {
   background-color: #000000;
   color: #ffffff;
-}
-#Taller #Section-8 .Section-data .container .Text-regular {
-  width: 65%;
-}
-#Taller #Section-9 .Section-data .container .Text-regular {
-  width: 65%;
 }
 #Taller .Text-regular {
   font-size: 14px;
@@ -8562,6 +8577,34 @@ main {
   font-size: 50px;
   text-transform: uppercase;
   margin-bottom: 21px;
+}
+@media (max-width: 767px) {
+  #Taller > .container {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+  #Taller > .container > .Page-title {
+    font-size: 86px;
+  }
+  #Taller > .container > .Page-subtitle {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+  #Taller > .container > .Page-description {
+    width: 100%;
+  }
+  #Taller > .Page-section .Section-data > .container {
+    padding-top: 56px;
+    padding-bottom: 70px;
+  }
+  #Taller > .Page-section .Section-data > .container .Text-regular {
+    width: 100%;
+  }
+  #Taller .Title-big {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 21px;
+  }
 }
 /**
  * @includes
@@ -8586,6 +8629,8 @@ main {
 }
 #Header > .container > .Header-show {
   display: none !important;
+  float: right;
+  padding: 10.5px 0 0;
 }
 @media (max-width: 767px) {
   #Header > .container > .Header-show {
@@ -8601,6 +8646,14 @@ main {
   td#Header > .container > .Header-show {
     display: table-cell !important;
   }
+}
+#Header > .container > .Header-show button {
+  font-size: 20px;
+  padding: 4px 12px;
+  background-color: transparent;
+  border: solid 2px #1d1d1b;
+  border-radius: 0;
+  color: #1d1d1b;
 }
 #Header > .container > .Header-actions {
   float: right;
@@ -8640,6 +8693,8 @@ main {
 }
 #Header-home > .container > .Header-show {
   display: none !important;
+  float: right;
+  padding: 10.5px 0 0;
 }
 @media (max-width: 767px) {
   #Header-home > .container > .Header-show {
@@ -8655,6 +8710,14 @@ main {
   td#Header-home > .container > .Header-show {
     display: table-cell !important;
   }
+}
+#Header-home > .container > .Header-show button {
+  font-size: 20px;
+  padding: 4px 12px;
+  background-color: transparent;
+  border: solid 2px #1d1d1b;
+  border-radius: 0;
+  color: #1d1d1b;
 }
 #Header-home > .container > .Header-actions {
   float: right;
@@ -8679,6 +8742,10 @@ main {
   font-size: 42px;
   color: #ffffff;
 }
+#Header-home > .container > .Header-show button {
+  border: solid 2px #ffffff;
+  color: #ffffff;
+}
 #Header-home > .container > .Header-actions > .Items > .Header-element a {
   color: #ffffff;
 }
@@ -8700,20 +8767,7 @@ main {
   }
   #Header > .container > .Header-logo span,
   #Header-home > .container > .Header-logo span {
-    font-size: 30px;
-  }
-  #Header > .container > .Header-show,
-  #Header-home > .container > .Header-show {
-    float: right;
-    padding: 10.5px 0 0;
-  }
-  #Header > .container > .Header-show button,
-  #Header-home > .container > .Header-show button {
-    font-size: 20px;
-    padding: 4px 12px;
-    background-color: transparent;
-    border: solid 2px #ffffff;
-    border-radius: 0;
+    font-size: 38px;
   }
   #Header > .container > .Header-actions,
   #Header-home > .container > .Header-actions {

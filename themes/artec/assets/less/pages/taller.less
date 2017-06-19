@@ -22,6 +22,14 @@
       > .container {
         padding-top: @Base-number*10;
         padding-bottom: @Base-number*14;
+        .Text-regular {
+          width: 65%;
+        }
+      }
+    }
+    .Section-cover {
+      img {
+        width: 100%;
       }
     }
   }
@@ -31,6 +39,7 @@
       color: @Site-color-0;
       > .container {
         > .Text-regular {
+          width: 100%;
           padding: 0 @Base-number*2;
           margin-bottom: @Base-number*6;
           font-size: 18px;
@@ -48,73 +57,22 @@
       }
     }
   }
-  #Section-3 {
-    .Section-data {
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
-    }
-  }
   #Section-4 {
     .Section-data {
       background-color: #000000;
       color: @Site-color-0;
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
-    }
-  }
-  #Section-5 {
-    .Section-data {
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
     }
   }
   #Section-6 {
     .Section-data {
       background-color: #000000;
       color: @Site-color-0;
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
-    }
-  }
-  #Section-7 {
-    .Section-data {
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
     }
   }
   #Section-8 {
     .Section-data {
       background-color: #000000;
       color: @Site-color-0;
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
-    }
-  }
-  #Section-9 {
-    .Section-data {
-      .container {
-        .Text-regular {
-          width: 65%;
-        }
-      }
     }
   }
 
@@ -135,4 +93,39 @@
     margin-bottom: @Base-number*3;
   }
 
+}
+
+@media (max-width: @screen-xs-max) {
+  #Taller {
+    > .container {
+      padding-top: @Base-number*4;
+      padding-bottom: @Base-number*4;
+      > .Page-title {
+        font-size: 86px;
+      }
+      > .Page-subtitle {
+        font-size: 26px;
+        margin-bottom: @Base-number*2;
+      }
+      > .Page-description {
+        width: 100%;
+      }
+    }
+    > .Page-section {
+      .Section-data {
+        > .container {
+          padding-top: @Base-number*8;
+          padding-bottom: @Base-number*10;
+          .Text-regular {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .Title-big {
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-bottom: @Base-number*3;
+    }
+  }
 }
