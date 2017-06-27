@@ -8,8 +8,7 @@ class CreatePostsTable extends Migration
 
     public function up()
     {
-        Schema::create('rainlab_blog_posts', function($table)
-        {
+        Schema::create('rainlab_blog_posts', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable()->index();
@@ -19,7 +18,9 @@ class CreatePostsTable extends Migration
             $table->longText('content')->nullable();
             $table->longText('content_html')->nullable();
             $table->timestamp('published_at')->nullable();
+            $table->boolean('destacado')->default(false);
             $table->boolean('published')->default(false);
+            $table->integer('visits')->nullable();
             $table->timestamps();
         });
     }

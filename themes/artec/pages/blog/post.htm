@@ -1,8 +1,11 @@
-url = "/blog/post"
+url = "/blog/:slug?"
 layout = "default"
 title = "Blog"
-==
 
+[Post]
+slug = "{{ :slug }}"
+[Sidebar]
+==
 
 <div class="Page-content" id="Blog">
     <div class="container">
@@ -13,162 +16,7 @@ title = "Blog"
             Donde sana el arte
         </div>
 
-
-        <!-- COMPONENTEEEEEEEE -->
-        <div class="Blog-container row">
-            <div class="col-lg-9 col-md-8 col-sm-7">
-
-                <div class="Post">
-                    <!-- Post actual  -->
-                    <div class="Post-item">
-                        <div class="Post-data">
-                            <div class="Post-title">
-                                HIP HOP DANCE ANYTIME ANYWHERE
-                            </div>
-                            <div class="Post-info">
-                                <span class="Date">July 21, 2015</span>
-                                <span class="Author">Diego Maruri</span>
-                            </div>
-                        </div>
-                        <div class="Post-image">
-                            <!-- Imagen sin crop -->
-                            <img src="/themes/artec/assets/images/layout/Post-default.png" alt=""/>
-                            <!-- Imagen sin crop -->
-                        </div>
-                        <div class="Post-data">
-                            <div class="Post-excerpt">
-                                <div class="Text">
-                                    <p>
-                                        Sed laoreet tortor vitae ipsum iaculis dapibus. Morbi leo enim, laoreet eget urna id, ullamcorper condimentum urna. Curabitur accumsan sem et nisi ultricies porttitor. Aliquam sed nunc elit. Nunc faucibus interdum mauris at mattis. Phasellus congue volutpat porttitor. Morbi ullamcorper ac velit et laoreet. Proin at consequat ipsum. Vivamus fringilla iaculis ex, et condimentum magna pharetra id. Aliquam erat volutpat. Nam odio velit, egestas vel leo tempus, luctus dapibus mauris.
-                                    </p>
-                                    <p>
-                                        Phasellus molestie, lectus sed dapibus volutpat, ligula tortor tincidunt purus, et imperdiet erat sem vel mauris. Nam nulla tortor, imperdiet et tincidunt nec, ornare sit amet risus. Aliquam malesuada bibendum gravida. Nullam blandit sagittis felis in ullamcorper. Vivamus varius sem vehicula, tempus arcu scelerisque, lobortis quam. Sed mollis nibh eget semper consequat.
-                                    </p>
-                                    <h2>
-                                        LOREM IPSUM DOLOR SIT AMET
-                                    </h2>
-                                    <p>
-                                        Aenean ac porttitor diam. Sed imperdiet mi rutrum metus porta pretium. Vestibulum fermentum lectus quis erat convallis volutpat. Vestibulum tristique semper lacus vitae commodo. Aliquam sollicitudin purus at placerat placerat.
-                                    </p>
-                                    <blockquote>
-                                        Sometimes when you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations.
-                                    </blockquote>
-                                    <p>
-                                        Suspendisse eleifend nulla ac rhoncus egestas. Sed vehicula ipsum vitae finibus condimentum. Phasellus rhoncus, nulla et sodales sodales, massa nisl volutpat odio, ac sodales risus metus sollicitudin odio. Proin et nibh a urna congue posuere. Proin lobortis sodales arcu sed volutpat. Proin sem turpis, sollicitudin ac augue in, aliquet mollis metus. Duis quam lorem, consequat a sapien eget, dignissim rhoncus turpis. Donec dictum eget nibh lobortis eleifend. Vestibulum sed porta sem. Etiam egestas velit dolor, a pretium elit finibus a. Donec tempus purus vel consequat pulvinar. Pellentesque at eros nec felis consectetur consequat in et turpis. Donec at erat venenatis, imperdiet sapien quis, molestie nisi. Phasellus metus nisi, placerat quis scelerisque sit amet, dapibus eget massa. Nunc egestas congue metus. Fusce facilisis purus quis diam fermentum, vitae bibendum metus porttitor.
-                                    </p>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Post actual -->
-                </div>
-
-                {% partial "panels/Panel-share" %}
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-5">
-                <div class="Posts-sm">
-                    <div class="Title-box">
-                        Destacado
-                    </div>
-
-                    <!-- Posts destacado -->
-                    <div class="Post-item Great">
-                        <a href="#">
-                            <div class="Post-image">
-                                <!-- Crop de imagen 280x180 -->
-                                <img src="/themes/artec/assets/images/layout/Post-great.png" alt=""/>
-                            </div>
-                            <div class="Post-data">
-                                <div class="Post-title">
-                                    HIP HOP DANCE ANYTIME ANYWHERE
-                                </div>
-                                <div class="Post-info">
-                                <span class="Author">
-                                    Diego Maruri
-                                </span>
-                                    <span class="Date">
-                                    July 21, 2015
-                                </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Posts destacado  -->
-
-                    <!-- Posts mas vistos NOTA! El primer post debe llevar la clase .Great, los siguientes no -->
-                    <div class="Post-item">
-                        <a href="#">
-                            <div class="Post-image">
-                                <!-- Crop de imagen 130x130 -->
-                                <img src="/themes/artec/assets/images/layout/Post-great.png" alt=""/>
-                            </div>
-                            <div class="Post-data">
-                                <div class="Post-title">
-                                    HIP HOP DANCE ANYTIME ANYWHERE
-                                </div>
-                                <div class="Post-info">
-                                <span class="Author">
-                                    Diego Maruri
-                                </span>
-                                    <span class="Date">
-                                    July 21, 2015
-                                </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Posts mas vistos  -->
-
-                </div>
-                <div class="Posts-sm Categories">
-                    <div class="Title-box">
-                        Categorías
-                    </div>
-                    <!-- Categorías -->
-                    <div class="Category-item">
-                        <a href="#">
-                            <span class="Cat">
-                                Categoría 1
-                            </span>
-                        </a>
-                    </div>
-                    <!-- Categorías -->
-                </div>
-                <div class="Posts-sm">
-                    <div class="Title-box">
-                        Recientes
-                    </div>
-                    <!-- Posts recientes -->
-                    <div class="Post-item">
-                        <a href="#">
-                            <div class="Post-image">
-                                <!-- Crop de imagen 130x130 -->
-                                <img src="/themes/artec/assets/images/layout/Post-small.png" alt=""/>
-                            </div>
-                            <div class="Post-data">
-                                <div class="Post-title">
-                                    HIP HOP DANCE ANYTIME ANYWHERE
-                                </div>
-                                <div class="Post-info">
-                                <span class="Author">
-                                    Diego Maruri
-                                </span>
-                                    <span class="Date">
-                                    July 21, 2015
-                                </span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- Posts recientes -->
-                </div>
-
-            </div>
-        </div>
-        <!-- COMPONENTEEEEEEEE -->
-
+        {% component "Post" %}
 
     </div>
 </div>

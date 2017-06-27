@@ -13,21 +13,20 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'rainlab.blog::lang.plugin.name',
+            'name' => 'rainlab.blog::lang.plugin.name',
             'description' => 'rainlab.blog::lang.plugin.description',
-            'author'      => 'Alexey Bobkov, Samuel Georges',
-            'icon'        => 'icon-pencil',
-            'homepage'    => 'https://github.com/rainlab/blog-plugin'
+            'author' => 'Alexey Bobkov, Samuel Georges',
+            'icon' => 'icon-pencil',
+            'homepage' => 'https://github.com/rainlab/blog-plugin'
         ];
     }
 
     public function registerComponents()
     {
         return [
-            'RainLab\Blog\Components\Post'       => 'blogPost',
-            'RainLab\Blog\Components\Posts'      => 'blogPosts',
-            'RainLab\Blog\Components\Categories' => 'blogCategories',
-            'RainLab\Blog\Components\RssFeed'    => 'blogRssFeed'
+            'RainLab\Blog\Components\LandingPosts' => 'LandingPosts',
+            'RainLab\Blog\Components\Post' => 'Post',
+            'RainLab\Blog\Components\Sidebar' => 'Sidebar',
         ];
     }
 
@@ -35,23 +34,23 @@ class Plugin extends PluginBase
     {
         return [
             'rainlab.blog.access_posts' => [
-                'tab'   => 'rainlab.blog::lang.blog.tab',
+                'tab' => 'rainlab.blog::lang.blog.tab',
                 'label' => 'rainlab.blog::lang.blog.access_posts'
             ],
             'rainlab.blog.access_categories' => [
-                'tab'   => 'rainlab.blog::lang.blog.tab',
+                'tab' => 'rainlab.blog::lang.blog.tab',
                 'label' => 'rainlab.blog::lang.blog.access_categories'
             ],
             'rainlab.blog.access_other_posts' => [
-                'tab'   => 'rainlab.blog::lang.blog.tab',
+                'tab' => 'rainlab.blog::lang.blog.tab',
                 'label' => 'rainlab.blog::lang.blog.access_other_posts'
             ],
             'rainlab.blog.access_import_export' => [
-                'tab'   => 'rainlab.blog::lang.blog.tab',
+                'tab' => 'rainlab.blog::lang.blog.tab',
                 'label' => 'rainlab.blog::lang.blog.access_import_export'
             ],
             'rainlab.blog.access_publish' => [
-                'tab'   => 'rainlab.blog::lang.blog.tab',
+                'tab' => 'rainlab.blog::lang.blog.tab',
                 'label' => 'rainlab.blog::lang.blog.access_publish'
             ]
         ];
@@ -61,30 +60,30 @@ class Plugin extends PluginBase
     {
         return [
             'blog' => [
-                'label'       => 'rainlab.blog::lang.blog.menu_label',
-                'url'         => Backend::url('rainlab/blog/posts'),
-                'icon'        => 'icon-pencil',
-                'iconSvg'     => 'plugins/rainlab/blog/assets/images/blog-icon.svg',
+                'label' => 'rainlab.blog::lang.blog.menu_label',
+                'url' => Backend::url('rainlab/blog/posts'),
+                'icon' => 'icon-pencil',
+                'iconSvg' => 'plugins/rainlab/blog/assets/images/blog-icon.svg',
                 'permissions' => ['rainlab.blog.*'],
-                'order'       => 300,
+                'order' => 300,
 
                 'sideMenu' => [
                     'new_post' => [
-                        'label'       => 'rainlab.blog::lang.posts.new_post',
-                        'icon'        => 'icon-plus',
-                        'url'         => Backend::url('rainlab/blog/posts/create'),
+                        'label' => 'rainlab.blog::lang.posts.new_post',
+                        'icon' => 'icon-plus',
+                        'url' => Backend::url('rainlab/blog/posts/create'),
                         'permissions' => ['rainlab.blog.access_posts']
                     ],
                     'posts' => [
-                        'label'       => 'rainlab.blog::lang.blog.posts',
-                        'icon'        => 'icon-copy',
-                        'url'         => Backend::url('rainlab/blog/posts'),
+                        'label' => 'rainlab.blog::lang.blog.posts',
+                        'icon' => 'icon-copy',
+                        'url' => Backend::url('rainlab/blog/posts'),
                         'permissions' => ['rainlab.blog.access_posts']
                     ],
                     'categories' => [
-                        'label'       => 'rainlab.blog::lang.blog.categories',
-                        'icon'        => 'icon-list-ul',
-                        'url'         => Backend::url('rainlab/blog/categories'),
+                        'label' => 'rainlab.blog::lang.blog.categories',
+                        'icon' => 'icon-list-ul',
+                        'url' => Backend::url('rainlab/blog/categories'),
                         'permissions' => ['rainlab.blog.access_categories']
                     ]
                 ]
@@ -97,7 +96,7 @@ class Plugin extends PluginBase
         return [
             'RainLab\Blog\FormWidgets\Preview' => [
                 'label' => 'Preview',
-                'code'  => 'preview'
+                'code' => 'preview'
             ]
         ];
     }
@@ -110,8 +109,8 @@ class Plugin extends PluginBase
         /*
          * Register the image tag processing callback
          */
-        TagProcessor::instance()->registerCallback(function($input, $preview) {
-            if (!$preview) {
+        TagProcessor::instance()->registerCallback(function ($input, $preview) {
+            if (! $preview) {
                 return $input;
             }
 
@@ -122,7 +121,7 @@ class Plugin extends PluginBase
                         <span class="indicator"></span>
                     </span>
                 </span>',
-            $input);
+                $input);
         });
     }
 
@@ -131,29 +130,27 @@ class Plugin extends PluginBase
         /*
          * Register menu items for the RainLab.Pages plugin
          */
-        Event::listen('pages.menuitem.listTypes', function() {
+        Event::listen('pages.menuitem.listTypes', function () {
             return [
-                'blog-category'       => 'rainlab.blog::lang.menuitem.blog_category',
+                'blog-category' => 'rainlab.blog::lang.menuitem.blog_category',
                 'all-blog-categories' => 'rainlab.blog::lang.menuitem.all_blog_categories',
-                'blog-post'           => 'rainlab.blog::lang.menuitem.blog_post',
-                'all-blog-posts'      => 'rainlab.blog::lang.menuitem.all_blog_posts',
+                'blog-post' => 'rainlab.blog::lang.menuitem.blog_post',
+                'all-blog-posts' => 'rainlab.blog::lang.menuitem.all_blog_posts',
             ];
         });
 
-        Event::listen('pages.menuitem.getTypeInfo', function($type) {
+        Event::listen('pages.menuitem.getTypeInfo', function ($type) {
             if ($type == 'blog-category' || $type == 'all-blog-categories') {
                 return Category::getMenuTypeInfo($type);
-            }
-            elseif ($type == 'blog-post' || $type == 'all-blog-posts') {
+            } elseif ($type == 'blog-post' || $type == 'all-blog-posts') {
                 return Post::getMenuTypeInfo($type);
             }
         });
 
-        Event::listen('pages.menuitem.resolveItem', function($type, $item, $url, $theme) {
+        Event::listen('pages.menuitem.resolveItem', function ($type, $item, $url, $theme) {
             if ($type == 'blog-category' || $type == 'all-blog-categories') {
                 return Category::resolveMenuItem($item, $url, $theme);
-            }
-            elseif ($type == 'blog-post' || $type == 'all-blog-posts') {
+            } elseif ($type == 'blog-post' || $type == 'all-blog-posts') {
                 return Post::resolveMenuItem($item, $url, $theme);
             }
         });

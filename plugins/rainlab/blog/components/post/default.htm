@@ -1,27 +1,38 @@
 {% set post = __SELF__.post %}
+<div class="Blog-container row">
+    <div class="col-lg-9 col-md-8 col-sm-7">
 
-<div class="content">{{ post.content_html|raw }}</div>
+        <div class="Post">
+            <!-- Post actual  -->
+            <div class="Post-item">
+                <div class="Post-data">
+                    <div class="Post-title">
+                        {{ post.title }}
+                    </div>
+                    <div class="Post-info">
+                        <span class="Date">{{ post.published_at|makeGodinez }}</span>
+                        <!--<span class="Author">Diego Maruri</span>-->
+                    </div>
+                </div>
+                <div class="Post-image">
+                    <!-- Imagen sin crop -->
+                    <img src="{{ post.principal_image.getPath }}" alt=""/>
+                    <!-- Imagen sin crop -->
+                </div>
+                <div class="Post-data">
+                    <div class="Post-excerpt">
+                        <div class="Text">
+                            {{ post.content_html|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Post actual -->
+        </div>
 
-{% if post.featured_images.count %}
-    <div class="featured-images text-center">
-        {% for image in post.featured_images %}
-            <p>
-                <img
-                    data-src="{{ image.filename }}"
-                    src="{{ image.path }}"
-                    alt="{{ image.description }}"
-                    style="max-width: 100%" />
-            </p>
-        {% endfor %}
+        {% partial "panels/Panel-share" %}
     </div>
-{% endif %}
 
-<p class="info">
-    Posted
-    {% if post.categories.count %} in
-        {% for category in post.categories %}
-            <a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-    {% endif %}
-    on {{ post.published_at|date('M d, Y') }}
-</p>
+    {% component "Sidebar" %}
+
+</div>
