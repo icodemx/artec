@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+      label: Título de la Obra
+    description:
+      type: richeditor
+      label: Descripción de la restauración
+    date_start:
+      type: datepicker
+      mode: date
+      label: Fecha de inicio
+      span: left
+    date_finish:
+      type: datepicker
+      mode: date
+      label: Fecha de termino
+      span: right
+    imgOriginal:
+      type: fileupload
+      mode: image
+      label: Imagen de la Obra de Arte Original
+      span: left
+    imgRecovered:
+      type: fileupload
+      mode: image
+      label: Imagen de la Obra de Arte Restaurada
+      span: right
+    published:
+      type: switch
+      default: true
+      label: ¿Publicar?
