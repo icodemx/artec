@@ -58,6 +58,44 @@
       }
     }
 
+    .Post {
+      .Post-item {
+        margin-bottom: @Base-number*6;
+        box-shadow: @Shadows;
+        .Post-image {
+          img {
+            width: 100%;
+          }
+        }
+        .Post-data {
+          padding: @Base-number*6;
+          .Post-title {
+            font-size: 34px;
+            text-transform: uppercase;
+          }
+          .Post-info {
+            font-size: 15px;
+            color: @Site-color-60;
+            .Author {
+              text-transform: uppercase;
+              font-size: 13px;
+            }
+            .Date {
+              margin-right: @Base-number;
+            }
+          }
+          .Post-excerpt {
+            .Text {
+              line-height: 160%;
+              p,blockquote {
+                margin-bottom: @Base-number*2.5;
+              }
+            }
+          }
+        }
+      }
+    }
+
     .Posts-sm {
       background-color: @Site-color-0;
       padding: @Base-number*2;
