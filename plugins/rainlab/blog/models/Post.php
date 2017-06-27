@@ -81,6 +81,10 @@ class Post extends Model
         ]
     ];
 
+    public $attachOne = [
+        'principal_image' => ['System\Models\File']
+    ];
+
     public $attachMany = [
         'featured_images' => ['System\Models\File', 'order' => 'sort_order'],
         'content_images' => ['System\Models\File']
@@ -103,17 +107,16 @@ class Post extends Model
      */
     public function filterFields($fields, $context = null)
     {
-        if (!isset($fields->published, $fields->published_at)) {
+        if (! isset($fields->published, $fields->published_at)) {
             return;
         }
 
         $user = BackendAuth::getUser();
 
-        if (!$user->hasAnyAccess(['rainlab.blog.access_publish'])) {
+        if (! $user->hasAnyAccess(['rainlab.blog.access_publish'])) {
             $fields->published->hidden = true;
             $fields->published_at->hidden = true;
-        }
-        else {
+        } else {
             $fields->published->hidden = false;
             $fields->published_at->hidden = false;
         }
@@ -121,9 +124,9 @@ class Post extends Model
 
     public function afterValidate()
     {
-        if ($this->published && !$this->published_at) {
+        if ($this->published && ! $this->published_at) {
             throw new ValidationException([
-               'published_at' => Lang::get('rainlab.blog::lang.post.published_validation')
+                'published_at' => Lang::get('rainlab.blog::lang.post.published_validation')
             ]);
         }
     }
@@ -131,6 +134,9 @@ class Post extends Model
     public function beforeSave()
     {
         $this->content_html = self::formatHtml($this->content);
+        if ($this->destacado) {
+            Post::where('destacado', true)->update(['destacado' => false]);
+        }
     }
 
     /**
@@ -141,7 +147,7 @@ class Post extends Model
     public function setUrl($pageName, $controller)
     {
         $params = [
-            'id'   => $this->id,
+            'id' => $this->id,
             'slug' => $this->slug,
         ];
 
@@ -193,8 +199,7 @@ class Post extends Model
             ->whereNotNull('published')
             ->where('published', true)
             ->whereNotNull('published_at')
-            ->where('published_at', '<', Carbon::now())
-        ;
+            ->where('published_at', '<', Carbon::now());
     }
 
     /**
@@ -211,13 +216,13 @@ class Post extends Model
          * Default options
          */
         extract(array_merge([
-            'page'       => 1,
-            'perPage'    => 30,
-            'sort'       => 'created_at',
+            'page' => 1,
+            'perPage' => 30,
+            'sort' => 'created_at',
             'categories' => null,
-            'category'   => null,
-            'search'     => '',
-            'published'  => true,
+            'category' => null,
+            'search' => '',
+            'published' => true,
             'exceptPost' => null,
         ], $options));
 
@@ -233,8 +238,7 @@ class Post extends Model
         if ($exceptPost) {
             if (is_numeric($exceptPost)) {
                 $query->where('id', '<>', $exceptPost);
-            }
-            else {
+            } else {
                 $query->where('slug', '<>', $exceptPost);
             }
         }
@@ -242,7 +246,7 @@ class Post extends Model
         /*
          * Sorting
          */
-        if (!is_array($sort)) {
+        if (! is_array($sort)) {
             $sort = [$sort];
         }
 
@@ -273,8 +277,8 @@ class Post extends Model
          * Categories
          */
         if ($categories !== null) {
-            if (!is_array($categories)) $categories = [$categories];
-            $query->whereHas('categories', function($q) use ($categories) {
+            if (! is_array($categories)) $categories = [$categories];
+            $query->whereHas('categories', function ($q) use ($categories) {
                 $q->whereIn('id', $categories);
             });
         }
@@ -286,7 +290,7 @@ class Post extends Model
             $category = Category::find($category);
 
             $categories = $category->getAllChildrenAndSelf()->lists('id');
-            $query->whereHas('categories', function($q) use ($categories) {
+            $query->whereHas('categories', function ($q) use ($categories) {
                 $q->whereIn('id', $categories);
             });
         }
@@ -296,13 +300,13 @@ class Post extends Model
 
     /**
      * Allows filtering for specifc categories
-     * @param  Illuminate\Query\Builder  $query      QueryBuilder
-     * @param  array                     $categories List of category ids
+     * @param  Illuminate\Query\Builder $query QueryBuilder
+     * @param  array $categories List of category ids
      * @return Illuminate\Query\Builder              QueryBuilder
      */
     public function scopeFilterCategories($query, $categories)
     {
-        return $query->whereHas('categories', function($q) use ($categories) {
+        return $query->whereHas('categories', function ($q) use ($categories) {
             $q->whereIn('id', $categories);
         });
     }
@@ -320,7 +324,7 @@ class Post extends Model
         $more = '<!-- more -->';
 
         return (
-            !!strlen(trim($this->excerpt)) ||
+            ! ! strlen(trim($this->excerpt)) ||
             strpos($this->content_html, $more) !== false ||
             strlen(Html::strip($this->content_html)) > 600
         );
@@ -343,6 +347,7 @@ class Post extends Model
         $more = '<!-- more -->';
         if (strpos($this->content_html, $more) !== false) {
             $parts = explode($more, $this->content_html);
+
             return array_get($parts, 0);
         }
 
@@ -372,7 +377,7 @@ class Post extends Model
      */
     public function scopeApplySibling($query, $options = [])
     {
-        if (!is_array($options)) {
+        if (! is_array($options)) {
             $options = ['direction' => $options];
         }
 
@@ -381,15 +386,14 @@ class Post extends Model
             'attribute' => 'published_at',
         ], $options));
 
-        $isPrevious = in_array($direction, ['previous', -1]);
+        $isPrevious = in_array($direction, ['previous', - 1]);
         $directionOrder = $isPrevious ? 'asc' : 'desc';
         $directionOperator = $isPrevious ? '>' : '<';
 
         return $query
             ->where('id', '<>', $this->id)
             ->whereDate($attribute, $directionOperator, $this->$attribute)
-            ->orderBy($attribute, $directionOrder)
-        ;
+            ->orderBy($attribute, $directionOrder);
     }
 
     /**
@@ -407,7 +411,7 @@ class Post extends Model
      */
     public function previousPost()
     {
-        return self::isPublished()->applySibling(-1)->first();
+        return self::isPublished()->applySibling(- 1)->first();
     }
 
     //
@@ -444,8 +448,8 @@ class Post extends Model
             }
 
             $result = [
-                'references'   => $references,
-                'nesting'      => false,
+                'references' => $references,
+                'nesting' => false,
                 'dynamicItems' => false
             ];
         }
@@ -463,7 +467,7 @@ class Post extends Model
             $cmsPages = [];
 
             foreach ($pages as $page) {
-                if (!$page->hasComponent('blogPost')) {
+                if (! $page->hasComponent('blogPost')) {
                     continue;
                 }
 
@@ -472,7 +476,7 @@ class Post extends Model
                  * eg: categoryPage = "{{ :somevalue }}", slug = "{{ :somevalue }}"
                  */
                 $properties = $page->getComponentProperties('blogPost');
-                if (!isset($properties['categoryPage']) || !preg_match('/{{\s*:/', $properties['slug'])) {
+                if (! isset($properties['categoryPage']) || ! preg_match('/{{\s*:/', $properties['slug'])) {
                     continue;
                 }
 
@@ -507,15 +511,15 @@ class Post extends Model
         $result = null;
 
         if ($item->type == 'blog-post') {
-            if (!$item->reference || !$item->cmsPage)
+            if (! $item->reference || ! $item->cmsPage)
                 return;
 
             $category = self::find($item->reference);
-            if (!$category)
+            if (! $category)
                 return;
 
             $pageUrl = self::getPostPageUrl($item->cmsPage, $category, $theme);
-            if (!$pageUrl)
+            if (! $pageUrl)
                 return;
 
             $pageUrl = Url::to($pageUrl);
@@ -524,20 +528,19 @@ class Post extends Model
             $result['url'] = $pageUrl;
             $result['isActive'] = $pageUrl == $url;
             $result['mtime'] = $category->updated_at;
-        }
-        elseif ($item->type == 'all-blog-posts') {
+        } elseif ($item->type == 'all-blog-posts') {
             $result = [
                 'items' => []
             ];
 
             $posts = self::isPublished()
-            ->orderBy('title')
-            ->get();
-            
+                ->orderBy('title')
+                ->get();
+
             foreach ($posts as $post) {
                 $postItem = [
                     'title' => $post->title,
-                    'url'   => self::getPostPageUrl($item->cmsPage, $post, $theme),
+                    'url' => self::getPostPageUrl($item->cmsPage, $post, $theme),
                     'mtime' => $post->updated_at,
                 ];
 
@@ -560,10 +563,10 @@ class Post extends Model
     protected static function getPostPageUrl($pageCode, $category, $theme)
     {
         $page = CmsPage::loadCached($theme, $pageCode);
-        if (!$page) return;
+        if (! $page) return;
 
         $properties = $page->getComponentProperties('blogPost');
-        if (!isset($properties['slug'])) {
+        if (! isset($properties['slug'])) {
             return;
         }
 
@@ -571,7 +574,7 @@ class Post extends Model
          * Extract the routing parameter name from the category filter
          * eg: {{ :someRouteParam }}
          */
-        if (!preg_match('/^\{\{([^\}]+)\}\}$/', $properties['slug'], $matches)) {
+        if (! preg_match('/^\{\{([^\}]+)\}\}$/', $properties['slug'], $matches)) {
             return;
         }
 
@@ -579,5 +582,18 @@ class Post extends Model
         $url = CmsPage::url($page->getBaseFileName(), [$paramName => $category->slug]);
 
         return $url;
+    }
+
+    public function addVisit()
+    {
+        try {
+            $this->timestamps = false;
+            $this->unsetEventDispatcher();
+            $this->visits ++;
+            $this->unsetEventDispatcher();
+            $this->save();
+        } catch (QueryException $e) {
+            \Log::info($e->getMessage());
+        }
     }
 }
