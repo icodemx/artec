@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Artwork
+
+# Model Form Field configuration
+form: $/icodemx/portafolio/models/artwork/fields.yaml
+
+# Model Class name
+modelClass: Icodemx\Portafolio\Models\Artwork
+
+# Default redirect location
+defaultRedirect: icodemx/portafolio/artwork
+
+# Create page
+create:
+    title: Create Artwork
+    redirect: icodemx/portafolio/artwork/update/:id
+    redirectClose: icodemx/portafolio/artwork
+
+# Update page
+update:
+    title: Edit Artwork
+    redirect: icodemx/portafolio/artwork
+    redirectClose: icodemx/portafolio/artwork
+
+# Preview page
+preview:
+    title: Preview Artwork
