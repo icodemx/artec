@@ -1,0 +1,128 @@
+#Guia {
+  > .container {
+    > .Page-title {
+      margin-bottom: 0;
+      line-height: 100%;
+    }
+    > .Page-subtitle {
+      margin-bottom: @Base-number*6;
+      font-size: 30px;
+      text-transform: none;
+    }
+    > .Page-description {
+      font-size: 19px;
+      color: @Site-color-50;
+      font-family: "Helvetica" , Arial, sans-serif ;
+      width: 70%;
+    }
+  }
+
+  > .Page-section {
+    .Section-data {
+      > .container {
+        position: relative;
+        padding-top: @Base-number*10;
+        padding-bottom: @Base-number*14;
+        &:before {
+          position: absolute;
+          content: '';
+          border-top:@Borders;
+          top: 0;
+          left: 0;
+          width: 100%;
+        }
+        .Text-regular {
+          width: 65%;
+        }
+      }
+    }
+    .Section-cover {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  #Section-2 {
+    .Section-data {
+      > .container {
+        > .Text-regular {
+          padding: 0 @Base-number*2;
+          margin-bottom: @Base-number*6;
+          font-size: 18px;
+
+        }
+      }
+      .Text-regular {
+        width: 100%;
+        > p {
+          margin-bottom: @Base-number*2;
+        }
+      }
+      .Title-regular {
+        margin-bottom: @Base-number*2;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+
+
+  .Text-regular {
+    font-size: 14px;
+    > p {
+      margin-bottom: @Base-number*3;
+    }
+  }
+  .Title-regular {
+    font-size: 24px;
+  }
+  .Title-big {
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: @Base-number*3;
+  }
+
+}
+
+@media (max-width: @screen-xs-max) {
+  #Guia {
+    > .container {
+      padding-top: @Base-number*4;
+      padding-bottom: @Base-number*4;
+      > .Page-title {
+        font-size: 86px;
+      }
+      > .Page-subtitle {
+        font-size: 26px;
+        margin-bottom: @Base-number*2;
+      }
+      > .Page-description {
+        width: 100%;
+      }
+    }
+    > .Page-section {
+      .Section-data {
+        > .container {
+          padding-top: @Base-number*8;
+          padding-bottom: @Base-number*10;
+          .Text-regular {
+            width: 100%;
+          }
+        }
+      }
+    }
+    #Section-2 {
+      .Section-data {
+        .col-md-4 {
+          margin-bottom: @Base-number*7;
+        }
+      }
+    }
+
+    .Title-big {
+      font-size: 40px;
+      text-transform: uppercase;
+      margin-bottom: @Base-number*3;
+    }
+  }
+}
