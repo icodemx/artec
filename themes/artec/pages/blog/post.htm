@@ -31,7 +31,9 @@ title = "Blog"
                             </div>
                         </div>
                         <div class="Post-image">
+                            <!-- Imagen sin crop -->
                             <img src="/themes/artec/assets/images/layout/Post-default.png" alt=""/>
+                            <!-- Imagen sin crop -->
                         </div>
                         <div class="Post-data">
                             <div class="Post-excerpt">
@@ -61,6 +63,8 @@ title = "Blog"
                     </div>
                     <!-- Post actual -->
                 </div>
+
+                {% partial "panels/Panel-share" %}
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-5">
@@ -68,10 +72,12 @@ title = "Blog"
                     <div class="Title-box">
                         Destacado
                     </div>
-                    <!-- Posts mas vistos y destacados NOTA! El primer post debe llevar la clase .Great, los siguientes no -->
+
+                    <!-- Posts destacado -->
                     <div class="Post-item Great">
                         <a href="#">
                             <div class="Post-image">
+                                <!-- Crop de imagen 280x180 -->
                                 <img src="/themes/artec/assets/images/layout/Post-great.png" alt=""/>
                             </div>
                             <div class="Post-data">
@@ -89,7 +95,32 @@ title = "Blog"
                             </div>
                         </a>
                     </div>
-                    <!-- Posts mas vistos y destacados  -->
+                    <!-- Posts destacado  -->
+
+                    <!-- Posts mas vistos NOTA! El primer post debe llevar la clase .Great, los siguientes no -->
+                    <div class="Post-item">
+                        <a href="#">
+                            <div class="Post-image">
+                                <!-- Crop de imagen 130x130 -->
+                                <img src="/themes/artec/assets/images/layout/Post-great.png" alt=""/>
+                            </div>
+                            <div class="Post-data">
+                                <div class="Post-title">
+                                    HIP HOP DANCE ANYTIME ANYWHERE
+                                </div>
+                                <div class="Post-info">
+                                <span class="Author">
+                                    Diego Maruri
+                                </span>
+                                    <span class="Date">
+                                    July 21, 2015
+                                </span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Posts mas vistos  -->
+
                 </div>
                 <div class="Posts-sm Categories">
                     <div class="Title-box">
@@ -113,6 +144,7 @@ title = "Blog"
                     <div class="Post-item">
                         <a href="#">
                             <div class="Post-image">
+                                <!-- Crop de imagen 130x130 -->
                                 <img src="/themes/artec/assets/images/layout/Post-small.png" alt=""/>
                             </div>
                             <div class="Post-data">
