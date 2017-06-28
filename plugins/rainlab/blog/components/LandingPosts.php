@@ -28,9 +28,9 @@ class LandingPosts extends ComponentBase
 
     public function onRender()
     {
-        $this->destacado = Post::IsPublished()->where('destacado', true)->first();
-        $this->posts = Post::IsPublished()->orderBy('published_at')->get();
-        $this->recientes = Post::IsPublished()->orderBy('published_at')->limit(4)->get();
-        $this->populares = Post::IsPublished()->orderBy('visits')->limit(3)->get();
+        $this->destacado = Post::with('user')->IsPublished()->where('destacado', true)->first();
+        $this->posts = Post::with('user')->IsPublished()->orderBy('published_at')->get();
+        $this->recientes = Post::with('user')->IsPublished()->orderBy('published_at')->limit(4)->get();
+        $this->populares = Post::with('user')->IsPublished()->orderBy('visits')->limit(3)->get();
     }
 }

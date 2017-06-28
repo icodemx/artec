@@ -20,7 +20,7 @@
                     </div>
                     <div class="Post-info">
                                 <span class="Author">
-                                    Diego Maruri
+                                    {{ destacado.user.FullName }}
                                 </span>
                         <span class="Date">
                                     {{ destacado.published_at|makeGodinez }}
@@ -47,7 +47,7 @@
                     </div>
                     <div class="Post-info">
                                 <span class="Author">
-                                    Diego Maruri
+                                    {{ popular.user.FullName }}
                                 </span>
                         <span class="Date">
                                     {{ popular.published_at|makeGodinez }}
@@ -79,7 +79,7 @@
                     </div>
                     <div class="Post-info">
                                 <span class="Author">
-                                    Diego Maruri
+                                    {{ reciente.user.FullName }}
                                 </span>
                         <span class="Date">
                                    {{ reciente.published_at|makeGodinez }}
