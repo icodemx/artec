@@ -45,7 +45,7 @@ main {
 #Level-2 {
   background-color: black;
   .container {
-    padding: @Base-number*20 0 @Base-number*20;
+    padding: @Base-number*20 @Base-number*20 @Base-number*20;
     color: @Site-color-0;
     text-align: center;
     > .Section-title {
@@ -55,6 +55,9 @@ main {
     > .Section-text {
       font-size: 18px;
       font-family: 'Athiti', serif;
+      p {
+        margin-bottom: @Base-number*3;
+      }
     }
   }
 }
@@ -159,6 +162,12 @@ main {
       > .Section-subtitle {
         font-size: 18px;
       }
+    }
+  }
+  #Level-2 {
+    .container {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
   #Level-3 {

@@ -39,6 +39,8 @@ img {
     -webkit-transition: -webkit-transform 0.3s 0.7s, opacity 0.3s 0.7s;
     -moz-transition: -moz-transform 0.3s 0.7s, opacity 0.3s 0.7s;
     transition: transform 0.3s 0.7s, opacity 0.3s 0.7s;
+    font-size: 18px;
+
 }
 .cd-image-label.is-hidden {
     visibility: hidden;
