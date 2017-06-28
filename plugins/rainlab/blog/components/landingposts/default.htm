@@ -19,9 +19,9 @@
                             {{ post.title }}
                         </div>
                         <div class="Post-info">
-                            <!--<span class="Author">-->
-                            <!--Diego Maruri-->
-                            <!--</span>-->
+                            <span class="Author">
+                            {{ post.user.FullName }}
+                            </span>
                             <span class="Date">
                                 {{ post.published_at|makeGodinez }}
                             </span>

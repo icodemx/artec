@@ -11,7 +11,7 @@
                     </div>
                     <div class="Post-info">
                         <span class="Date">{{ post.published_at|makeGodinez }}</span>
-                        <!--<span class="Author">Diego Maruri</span>-->
+                        <span class="Author">{{ post.user.FullName }}</span>
                     </div>
                 </div>
                 <div class="Post-image">
