@@ -24,7 +24,7 @@ class Post extends ComponentBase
     public function init()
     {
         $slug = $this->property('slug');
-        $this->post = ModelPost::where('slug', $slug)->first();
+        $this->post = ModelPost::with('user')->where('slug', $slug)->first();
         if (!$this->post) {
             return Response::make($this->controller->run('404'), 404);
         }
