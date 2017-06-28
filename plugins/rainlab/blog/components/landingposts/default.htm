@@ -9,7 +9,7 @@
             {% for post in posts %}
             <!-- Posts normales  -->
             <div class="Post-item">
-                <a href="/blog/{{ post.slug }}">
+                <a href="/blog/post/{{ post.slug }}">
                     <div class="Post-image">
                         <!-- Crop de imagen 950x380 -->
                         <img src="{{ post.principal_image.thumb(950,380,'crop') }}" alt=""/>
