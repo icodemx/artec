@@ -55,6 +55,7 @@ main {
     > .Section-text {
       font-size: 18px;
       font-family: 'Athiti', serif;
+      color: @Site-color-20;
       p {
         margin-bottom: @Base-number*3;
       }
@@ -149,6 +150,27 @@ main {
   .Section-subtitle {
     font-size: 20px;
     text-transform: uppercase;
+    margin-bottom: @Base-number*6;
+  }
+  > .Section-text {
+    font-size: 17px;
+    text-transform: none;
+    text-shadow: -2px 2px black;
+    p {
+      margin-bottom: @Base-number*3;
+      .ref {
+        width: @Base-number*10;
+        display: inline-block;
+      }
+      a {
+        color: inherit;
+        opacity: 0.8;
+      }
+      i {
+        margin-right: @Base-number;
+        width: @Base-number*2.5;
+      }
+    }
   }
 }
 

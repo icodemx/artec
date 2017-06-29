@@ -2,22 +2,23 @@
   > .container {
     padding: @Base-number*8 @Base-number*2 @Base-number*10;
     .Page-title {
-      font-size: @Base-number*18;
+      font-size: @Base-number*16.5;
       text-transform: uppercase;
-      line-height: @Base-number*22;
       border-top: solid 1px black;
       padding-top: @Base-number*8;
-      margin-bottom: @Base-number;
+      margin-bottom: 0;
+      line-height: 100%;
     }
     .Page-subtitle {
+      margin-bottom: @Base-number*4;
+      font-size: 30px;
       text-transform: uppercase;
-      font-size: 22px;
-      margin-bottom: @Base-number*2;
     }
     .Page-description {
+      font-size: 20px;
+      color: @Site-color-50;
       font-family: 'Athiti', serif;
-      width: @Base-number*47;
-      font-size: 17px;
+      width: 50%;
     }
 
     .Projects {
@@ -28,7 +29,7 @@
         }
         .Project-information {
           font-size: 19px;
-          color: @Site-color-60;
+          color: @Site-color-50;
           font-family: 'Athiti', serif;
           > div {
             width: 35%;

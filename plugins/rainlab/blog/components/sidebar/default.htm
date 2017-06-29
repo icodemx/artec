@@ -9,7 +9,7 @@
         {% if destacado %}
         <!-- Posts destacado -->
         <div class="Post-item Great">
-            <a href="/post/{{ destacado.slug }}">
+            <a href="/blog/post/{{ destacado.slug }}">
                 <div class="Post-image">
                     <!-- Crop de imagen 280x180 -->
                     <img src="{{ destacado.principal_image.thumb(280,180,'crop') }}" alt=""/>
@@ -36,7 +36,7 @@
         {% for popular in populares %}
         <!-- Posts mas vistos  -->
         <div class="Post-item">
-            <a href="/post/{{ popular.slug }}">
+            <a href="/blog/post/{{ popular.slug }}">
                 <div class="Post-image">
                     <!-- Crop de imagen 130x130 -->
                     <img src="{{ popular.principal_image.thumb(130,130,'crop') }}" alt=""/>
@@ -68,7 +68,7 @@
         {% for reciente in recientes %}
         <!-- Posts recientes -->
         <div class="Post-item">
-            <a href="/post/{{ reciente.slug }}">
+            <a href="/blog/post/{{ reciente.slug }}">
                 <div class="Post-image">
                     <!-- Crop de imagen 130x130 -->
                     <img src="{{ reciente.principal_image.thumb(130,130,'crop') }}" alt=""/>

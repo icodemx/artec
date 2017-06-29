@@ -1,5 +1,6 @@
-#Guia {
+#Contacto {
   > .container {
+    padding-bottom: @Base-number*8;
     > .Page-title {
       font-size: @Base-number*18;
     }
@@ -14,17 +15,6 @@
   > .Page-section {
     .Section-data {
       > .container {
-        position: relative;
-        padding-top: @Base-number*10;
-        padding-bottom: @Base-number*14;
-        &:before {
-          position: absolute;
-          content: '';
-          border-top:@Borders;
-          top: 0;
-          left: 0;
-          width: 100%;
-        }
         .Title-big {
           width: 55%;
         }
@@ -34,32 +24,35 @@
           color: @Site-color-50;
           font-size: 19px;
         }
+        .Form-box {
+          width: 65%;
+          margin-bottom: @Base-number*20;
+          .form-group {
+            margin-bottom: @Base-number*2;
+            label {
+              font-size: 20px;
+              color: @Site-color-50;
+              font-family: 'Athiti', serif;
+              font-weight: normal;
+            }
+            input, textarea {
+              border-radius: 0;
+              border-color: @Site-color-50;
+            }
+          }
+          .Button-icon {
+            margin-top: @Base-number;
+            font-size: 21px;
+            padding: @Base-number @Base-number*3;
+            font-family: 'Athiti', serif;
+            border-color: @Site-color-50;
+          }
+        }
       }
     }
     .Section-cover {
       img {
         width: 100%;
-      }
-    }
-  }
-  #Section-2 {
-    .Section-data {
-      > .container {
-        > .Text-regular {
-          padding: 0 @Base-number*2;
-          margin-bottom: @Base-number*6;
-          font-size: 18px;
-
-        }
-      }
-      .Text-regular {
-        > p {
-          margin-bottom: @Base-number*2;
-        }
-      }
-      .Title-regular {
-        margin-bottom: @Base-number*2;
-        text-transform: uppercase;
       }
     }
   }
@@ -85,16 +78,17 @@
 }
 
 @media (max-width: @screen-xs-max) {
-  #Guia {
+  #Contacto {
     > .container {
       padding-top: @Base-number*4;
       padding-bottom: @Base-number*4;
       > .Page-title {
-        font-size: 86px;
+        font-size: 42px;
+        line-height: 110%;
       }
       > .Page-subtitle {
-        font-size: 26px;
-        margin-bottom: @Base-number*2;
+        font-size: 22px;
+        margin-bottom: 0;
       }
       > .Page-description {
         width: 100%;
@@ -103,13 +97,13 @@
     > .Page-section {
       .Section-data {
         > .container {
-          padding-top: @Base-number*8;
-          padding-bottom: @Base-number*10;
-          .Text-regular {
-            width: 100%;
-          }
+          padding-top: @Base-number*2;
         }
       }
+    }
+    .Form-box {
+      width: 100% !important;
+      margin-bottom: @Base-number*15 !important;
     }
 
     .Title-big {
