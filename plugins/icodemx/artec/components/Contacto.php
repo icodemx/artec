@@ -19,12 +19,11 @@ class Contacto extends ComponentBase
 
     public function onSend()
     {
-        $data = post();
-        \Log::info($data);
-
-        \Mail::send('icodemx.artec::mail.contacto', $data, function ($message) {
+        $vars = post();
+        \Mail::send('icodemx.artec::mail.contacto', $vars, function ($message) {
             $message->subject('Nueva solicitud de contacto');
-            $message->to('rpamatzr@cdmx.gob.mx');
+            $message->to('artecdemexico@gmail.com');
         });
+        \Flash::success('Mensaje enviado, gracias.');
     }
 }
