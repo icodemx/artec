@@ -6,10 +6,9 @@ main {
   padding: 0;
 }
 
-
 #Level-1 {
   position: relative;
-  > .Section-content{
+  > .Section-content {
     padding: @Base-number*45 @Base-number*2 @Base-number*10;
     position: absolute;
     width: 100%;
@@ -43,19 +42,19 @@ main {
 }
 
 #Level-2 {
-  background-color: black;
+  background-color: @Site-color-0;
   .container {
     padding: @Base-number*20 @Base-number*20 @Base-number*20;
     color: @Site-color-0;
     text-align: center;
     > .Section-title {
       font-size: 30px;
-      margin-bottom: @Base-number*2;
+      margin-bottom: @Base-number*4;
     }
     > .Section-text {
       font-size: 18px;
       font-family: 'Athiti', serif;
-      color: @Site-color-20;
+      color: @Site-color-60;
       p {
         margin-bottom: @Base-number*3;
       }
@@ -80,18 +79,25 @@ main {
     font-size: 18px;
   }
   > .Section-sub {
-    position: relative;
-    > .Section-content {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      padding: @Base-number*8;
-      height: 100%;
-      background-color: rgba(0,0,0,0.4);
-    }
-    > .Section-bg {
-      img {
+    > a {
+      display: block;
+      position: relative;
+      > .Section-content {
+        position: absolute;
+        left: 0;
         width: 100%;
+        padding: @Base-number*8;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+      > .Section-bg {
+        img {
+          width: 100%;
+        }
+      }
+      &:hover {
+        text-decoration: none;
+        opacity: 0.90;
       }
     }
     &.Divided {
@@ -101,14 +107,27 @@ main {
       width: 50%;
       top: 0;
       .Section-sub--sub {
-        padding: @Base-number*8;
+        > a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          padding: @Base-number*8;
+          &:hover {
+            text-decoration: none;
+            opacity: 0.94;
+          }
+        }
         &:first-of-type {
-          background-color: #E56448;
           height: 55%;
+          > a {
+            background-color: #E56448;
+          }
         }
         &:last-of-type {
-          background-color: #323642;
           height: 45%;
+          > a {
+            background-color: #323642;
+          }
         }
       }
     }
@@ -159,7 +178,7 @@ main {
     p {
       margin-bottom: @Base-number*3;
       .ref {
-        width: @Base-number*10;
+        width: @Base-number*13;
         display: inline-block;
       }
       a {
@@ -174,7 +193,6 @@ main {
   }
 }
 
-
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
   #Level-1 {
     > .Section-content {
@@ -186,12 +204,14 @@ main {
       }
     }
   }
+
   #Level-2 {
     .container {
       padding-left: 0;
       padding-right: 0;
     }
   }
+
   #Level-3 {
     .Section-title {
       font-size: @Base-number*8;
@@ -200,6 +220,7 @@ main {
       font-size: 16px;
     }
   }
+
   #Level-4 {
     > .Section-title {
       font-size: @Base-number*15;
@@ -224,6 +245,7 @@ main {
       }
     }
   }
+
   #Level-3 {
     .Section-title {
       font-size: @Base-number*7;
@@ -242,6 +264,7 @@ main {
       }
     }
   }
+
   #Level-4 {
     > .Section-title {
       font-size: @Base-number*13;
@@ -256,30 +279,32 @@ main {
 }
 
 @media (max-width: @screen-xs-max) {
- #Level-1 {
-   position: relative;
-   > .Section-content {
-     padding: 0;
-     position: absolute;
-     width: 100%;
-     top:50%;
-     margin-top: -@Base-number*7;
-     text-align: center;
-     > .Section-title {
-       font-size: 38px;
-       line-height: 45px;
-     }
-     > .Section-subtitle {
-       font-size: 14px;
-       margin-bottom: @Base-number*2;
-     }
-   }
- }
+  #Level-1 {
+    position: relative;
+    > .Section-content {
+      padding: 0;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      margin-top: -@Base-number*7;
+      text-align: center;
+      > .Section-title {
+        font-size: 38px;
+        line-height: 45px;
+      }
+      > .Section-subtitle {
+        font-size: 14px;
+        margin-bottom: @Base-number*2;
+      }
+    }
+  }
+
   #Level-2 {
     .container {
       padding: @Base-number*18 @Base-number*3 @Base-number*20;
     }
   }
+
   #Level-3 {
     > .Section-sub {
       width: 100% !important;
@@ -314,6 +339,7 @@ main {
       height: @Base-number*30 !important;
     }
   }
+
   #Level-4 {
     padding: @Base-number*4 @Base-number*2;
     > .Section-title {
@@ -327,6 +353,7 @@ main {
       top: @Base-number*5;
     }
   }
+
   #Level-5 {
     padding: @Base-number*4;
     .Section-title {
