@@ -21,6 +21,11 @@ columns:
         searchable: true
         sortable: false
 
+    user:
+        relation: user
+        select: concat(first_name,' ', last_name)
+        searchable: true
+
     created_at:
         label: rainlab.blog::lang.post.created
         type: date
