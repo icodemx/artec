@@ -1,7 +1,7 @@
 <?php namespace Rainlab\Blog\Components;
 
 use Cms\Classes\ComponentBase;
-use RainLab\Blog\Models\Post;
+use RainLab\Blog\Models\Post as Posts;
 
 class Sidebar extends ComponentBase
 {
@@ -27,8 +27,8 @@ class Sidebar extends ComponentBase
 
     public function onRender()
     {
-        $this->destacado = Post::IsPublished()->where('destacado', true)->first();
-        $this->recientes = Post::IsPublished()->orderBy('published_at')->limit(4)->get();
-        $this->populares = Post::IsPublished()->orderBy('visits')->limit(3)->get();
+        $this->destacado = Posts::IsPublished()->where('destacado', true)->first();
+        $this->recientes = Posts::IsPublished()->orderBy('published_at')->limit(4)->get();
+        $this->populares = Posts::IsPublished()->orderBy('visits')->limit(3)->get();
     }
 }
