@@ -1,6 +1,8 @@
 <?php namespace Icodemx\Portafolio\Models;
 
 use Model;
+use October\Rain\Database\Traits\NestedTree;
+use October\Rain\Database\Traits\Sortable;
 use October\Rain\Database\Traits\Validation;
 
 /**
@@ -10,6 +12,8 @@ class Artwork extends Model
 {
 
     use Validation;
+    use Sortable;
+    use NestedTree;
     /**
      * @var string The database table used by the model.
      */
