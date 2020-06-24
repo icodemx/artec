@@ -3,8 +3,8 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    order:
+        label: Orden
         searchable: true
     title:
         label: Nombre

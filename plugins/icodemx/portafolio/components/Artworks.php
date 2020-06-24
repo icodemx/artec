@@ -23,6 +23,6 @@ class Artworks extends ComponentBase
 
     public function onRender()
     {
-        $this->artworks = Artwork::IsPublished()->orderBy('created_at','DESC')->get();
+        $this->artworks = Artwork::IsPublished()->orderBy('sort_order')->get();
     }
 }
