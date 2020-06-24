@@ -6,7 +6,7 @@
 title: Reorder Proyectos
 
 # Attribute name
-nameFrom: titulo
+nameFrom: title
 
 # Model Class name
 modelClass: Icodemx\Portafolio\Models\Artwork
