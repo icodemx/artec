@@ -2,3 +2,6 @@
 1.0.2:
     - Se crea estructura de Obras de Arte
     - create_artworks_table.php
+1.0.3:
+    - Se crean campos de ordenamiento
+    - update_artworks_table_sort.php
