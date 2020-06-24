@@ -3,7 +3,7 @@
 # ===================================
 
 columns:
-    order:
+    sort_order:
         label: Orden
         searchable: true
     title:
